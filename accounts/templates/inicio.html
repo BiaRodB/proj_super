@@ -1,0 +1,12 @@
+{% extends 'base_adm.html' %}
+{% load static %}
+{% block content %}
+<div class="juntar">
+<div class='cards'>
+    <center><a href = "{% url 'empresa:empresa_cad'%}"><img src="{% static 'img/empresas.png' %}" width="240" height="200"><br><p class="adc_item">Adicionar Empresa</p></a></center>
+</div>
+<div class='cards'>
+    <center><img src="{% static 'img/produtos.png' %}" width="240" height="200"><br><p class="adc_item">Adicionar Produtos</p></center>
+</div>
+</div>
+{% endblock %}

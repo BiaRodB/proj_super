@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <title>Cadastro de Super Usuário</title>
+</head>
+<body>
+<main>
+  <div class='logo'><img src="{% static 'img/logo.jpg' %}" alt="Logo" width="105" height="100" class="logo"></div>
+  <div class="rbc">RBC</div>
+  <div class="adm"><h1>Área do Administrador</h1></div>
+  <div class="empresas"><h3>Empresas</h3></div>
+  <div class="pacotes"><h3>Pacotes</h3></div>
+  {% if link_cad %}
+  <div class="voltar"><a href="{% url 'accounts:cadastro_template'%}"><h3>{{nome}}</h3></a></div>
+  {% endif %}
+  {% if link_form%}
+  <div class="voltar"><a href="{% url 'accounts:index'%}"><h3>{{nome}}</h3></a></div>
+{% endif %}
+  <div class="header" style="padding-top: 0.7%;">{{titulo}}</div>
+</main>
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'base_adm.html'%}
+{% block content %}
+{% if msg %}
+<div style="margin-top: 1.1%;position: absolute;font-size: 14pt;font-weight: bold;" class="alert {{class}}">
+   {{msg}}
+</div>
+{% endif %}
+
+<section>
+  <div>
+  <form action="{% url 'accounts:cadastrando' %}" method="POST" enctype="multipart/form-data" class="form">
+    
+    {% csrf_token %}  
+    <center>
+    <input type="text" name="user" id="nome" class="campo" placeholder="Usuário"required><br>
+    <input type="text" name="nome" id="nome" class="campo" placeholder="Nome"required><br>
+    <input type='text' name="email" id="nome" class="campo" placeholder="E-mail"required><br>
+    <input type="password"name="senha" id="nome" class="campo" placeholder="Senha"required><br>
+    <input type="password" name="senha_repeat" id="nome" class="campo" placeholder="Repetir Senha" required><br></center>
+    <center><button type="submit" class="button">Cadastrar</button></center>
+  </form>
+</section>
+</div>
+
+{% endblock %}
+

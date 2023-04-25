@@ -1,0 +1,21 @@
+{% extends 'base_adm.html'%}
+{% block content %}
+{% if msg %}
+<div style="margin-top: 1.1%;position: absolute;font-size: 14pt;font-weight: bold;" class="alert {{class}}">
+   {{msg}}
+</div>
+{% endif %}
+
+<section>
+  <div>
+  <form action="{% url 'empresa:empresa_cad' %}" method="POST" enctype="multipart/form-data" class="form">
+    
+    {% csrf_token %}  
+    {{ form.as_p }}
+
+    <button type="submit">criar</button>
+  </form>
+</section>
+</div>
+
+{% endblock %}
